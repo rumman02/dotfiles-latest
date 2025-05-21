@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0px;
+  border: 0;
+}
+
+window.primary {
+  font-family: "SF Pro Display";
+  font-weight: 500;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modules-left {
+  margin-left: 15px;
+}
+.modules-right {
+  margin-right: 15px;
+}
+.modules-right * {
+  margin-left: 15px;
+}
+
+#group-power * {
+  margin-right: 15px;
+}
+#group-power:last-child {
+  margin: 0px;
+}
+
+#workspaces {
+  margin-left: 5px;
+}
+#workspaces button {
+  margin-right: 10px;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+#workspaces button.active {
+  border-bottom: 2px solid white;
+  color: white;
+}
+#workspaces button:hover {
+  color: white;
+  border-top: 1px solid white;
+}
+
+#window {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+#network {
+  margin: 0 0px 0 7px;
+}
+
+#custom-updates {
+  margin: 0 2px 0 15px;
+}
+
+tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 7px;
+}
+
+window.sub {
+  background-color: rgba(0, 0, 0, 0);
+}
+#submap {
+  color: rgba(251, 241, 199, 1);
+  border: 3px solid rgba(251, 241, 199, 1);
+  background-color: rgba(40, 40, 40, 1);
+  padding: 0 30;
+  border-radius: 25;
+  /* color: rgba(122, 162, 247, 1); */
+  /* color: rgba(169, 177, 214, 1); */
+  /* border: 3px solid rgba(122, 162, 247, 1); */
+  /* background-color: rgba(36, 40, 59, 1); */
+}
