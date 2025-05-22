@@ -30,7 +30,6 @@
       cargo
       ghostty
       motrix
-      nautilus
       obsidian # note taking app
       rofi-wayland
       wl-clipboard # for copy clipboard
@@ -64,19 +63,31 @@
       nodejs_22 # nodejs_23 has some problem for "node-debug2-adapter"
 
       # fonts installation
-      # noto-fonts
+      noto-fonts
       # noto-fonts-cjk-sans
       noto-fonts-emoji
       font-awesome
       nerd-fonts.jetbrains-mono
       nerd-fonts.iosevka
+      times-newer-roman
       # nerd-fonts.zed-mono
+
+      qbittorrent
+      kdePackages.kcalc
+      kdePackages.dolphin
     ];
 
     file = { };
 
     sessionVariables = { };
 
+    pointerCursor = {
+      enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 64;
+      gtk = { enable = true; };
+    };
   };
 
   programs = {
