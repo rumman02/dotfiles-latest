@@ -107,7 +107,7 @@
         isNormalUser = true;
         inherit shell;
         inherit initialPassword;
-        extraGroups = [ "wheel" "i2c" ];
+        extraGroups = [ "wheel" "networkmanager" "i2c" ];
       };
     };
   };
