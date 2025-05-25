@@ -73,8 +73,10 @@
       # nerd-fonts.zed-mono
 
       qbittorrent
-      kdePackages.kcalc
+      # kdePackages.kcalc
       kdePackages.dolphin
+      gnome-calculator
+      google-chrome
     ];
 
     file = { };
@@ -86,7 +88,6 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
       size = 64;
-      gtk = { enable = true; };
     };
   };
 
