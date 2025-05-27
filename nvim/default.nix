@@ -1,15 +1,21 @@
-{ lib, ... }:
-let
-  nvimDir = ./.; # nvim file directory (this directory)
-  nvimFiles = builtins.attrNames (builtins.readDir nvimDir);
-in {
+{ lib, ... }: {
   home = {
-    file = lib.mkMerge (map (fileName: {
-      ".config/nvim/${fileName}" = {
-        source = "${nvimDir}/${fileName}";
+    file = {
+      ".config/nvim" = {
+        source = lib.cleanSourceWith {
+          src = ./.;
+          filter = path: type:
+            !(lib.hasSuffix ".nix" path || lib.hasSuffix "lazy-lock.json" path);
+        };
         recursive = true;
       };
-    }) nvimFiles);
+
+    };
+    activation = {
+      myCommand = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        ln ~/.dotfiles/nvim/lazy-lock.json ~/.config/nvim
+      '';
+    };
   };
 }
 
