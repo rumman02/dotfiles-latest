@@ -1,0 +1,7 @@
+modmap:
+  - name: main remap
+    remap:
+      capslock:
+        held: capslock
+        alone: esc
+        alone_timeout_millis: 250

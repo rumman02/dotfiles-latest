@@ -1,0 +1,9 @@
+Check these again
+snacks.rename
+snacks.words
+snacks.scope
+snacks.notifier lsp progress
+snacks.layout
+
+fzflua code-action and snackspicker has any code-actions?
+
