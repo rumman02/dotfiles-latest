@@ -72,10 +72,10 @@ window.sub {
 }
 #submap {
   color: rgba(251, 241, 199, 1);
-  border: 3px solid rgba(251, 241, 199, 1);
+  border: 2px solid rgba(251, 241, 199, 1);
   background-color: rgba(40, 40, 40, 1);
   padding: 0 30;
-  border-radius: 25;
+  border-radius: 5;
   /* color: rgba(122, 162, 247, 1); */
   /* color: rgba(169, 177, 214, 1); */
   /* border: 3px solid rgba(122, 162, 247, 1); */

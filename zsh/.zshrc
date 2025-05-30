@@ -93,6 +93,8 @@ alias ls="ls --color" # modify ls command for better view
 alias c="clear"
 alias p10k="p10k configure"
 alias fnvim="fzf | xargs nvim"
+alias vi="nvim"
+alias vim="nvim"
 alias ta="tmux attach"
 alias tls="tmux ls"
 alias tka='tmux kill-server'
@@ -187,26 +189,26 @@ setup_neovim_config "https://github.com/NvChad/starter" "nvchad" "nnvim"
 #          fzf theme for tokyonight night          #
 #==================================================#
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_night.sh
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
-"
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+#   --highlight-line \
+#   --info=inline-right \
+#   --ansi \
+#   --layout=reverse \
+#   --border=none
+#   --color=bg+:#283457 \
+#   --color=bg:#16161e \
+#   --color=border:#27a1b9 \
+#   --color=fg:#c0caf5 \
+#   --color=gutter:#16161e \
+#   --color=header:#ff9e64 \
+#   --color=hl+:#2ac3de \
+#   --color=hl:#2ac3de \
+#   --color=info:#545c7e \
+#   --color=marker:#ff007c \
+#   --color=pointer:#ff007c \
+#   --color=prompt:#2ac3de \
+#   --color=query:#c0caf5:regular \
+#   --color=scrollbar:#27a1b9 \
+#   --color=separator:#ff9e64 \
+#   --color=spinner:#ff007c \
+# "

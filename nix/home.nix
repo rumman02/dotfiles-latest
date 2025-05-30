@@ -1,20 +1,5 @@
 { pkgs, inputs, system, nixVersion, userName, homePath, ... }: {
-  imports = [
-    ./global.nix
-    ../ghostty
-    ../hyprland
-    ../hyprpaper
-    ../kitty
-    ../lazygit
-    ../mpv
-    ../nvim
-    ../tmux
-    ../waybar
-    ../wezterm
-    ../xremap
-    ../yazi
-    ../zsh
-  ];
+  imports = [ ./global.nix ./config_files.nix ];
 
   home = {
     username = userName;
@@ -22,35 +7,49 @@
     stateVersion = nixVersion;
 
     packages = with pkgs; [
+      # browsers
       brave
       # google-chrome
       # firefox
       inputs.zen-browser.packages.${system}.default
+      google-chrome
+
+      # tools
       cava
-      cargo
-      ghostty
+      cmatrix
       motrix
       obsidian # note taking app
-      rofi-wayland
-      wl-clipboard # for copy clipboard
-      gcc # c compiler usefull or many things
-      tmux # overrided to 3.4, because of the latest version has special key problems
-      imagemagick # for support images on terminal/neovim editor
       vscode
-      unzip # extrac zip
+      wpsoffice
+      mpv # all types of video player
+      qbittorrent
+      # kdePackages.kcalc
+      kdePackages.dolphin
+      gnome-calculator
       # clickup # project management apps
       # telegram-desktop # telegram desktop
       # whatsapp-for-linux # whatsapp desktop
+      # NOTE: checkout leter (Mouseless linux)
+      # wl-kbptr
+      # wlrctl
+      xdg-user-dirs
+
+      # terminal
+      ghostty
+      tmux
       fd # file finder
       ripgrep
-      mpv # all types of video player
-      gnumake42 # for luasnip make for nvim cmp
-      gradle_8 # java project
-      zoxide
-      waybar # status line
       bc # basic calculator for hyprland scripts
-      wpsoffice
-      # hyprlandPlugins.hy3
+      zoxide
+      imagemagick # for support images on terminal/neovim editor
+      unzip # extrac zip
+
+      # window manager
+      rofi-wayland
+      wl-clipboard # for copy clipboard
+      hyprlandPlugins.hy3
+      hyprpaper
+      waybar # status line
 
       # language servers
       # jdt-language-server
@@ -61,8 +60,14 @@
       luarocks # (installed for neovim luacheck linter)
       lua51Packages.lua # most needed lua package. version 5.1
       nodejs_22 # nodejs_23 has some problem for "node-debug2-adapter"
+      gradle_8 # java project
 
-      # fonts installation
+      # builder
+      cargo
+      gcc # c compiler usefull or many things
+      gnumake42 # for luasnip make for nvim cmp
+
+      # fonts
       noto-fonts
       # noto-fonts-cjk-sans
       noto-fonts-emoji
@@ -71,12 +76,6 @@
       nerd-fonts.iosevka
       times-newer-roman
       # nerd-fonts.zed-mono
-
-      qbittorrent
-      # kdePackages.kcalc
-      kdePackages.dolphin
-      gnome-calculator
-      google-chrome
     ];
 
     file = { };
@@ -92,7 +91,6 @@
   };
 
   programs = {
-    home-manager = { enable = true; };
     git = {
       enable = true;
       userName = "rumman02";
@@ -102,5 +100,24 @@
   };
 
   fonts = { fontconfig = { enable = true; }; };
+
+  # if you don't know the hash, just run for the first time as (hash = "")
+  # after that in the terminal you will see the
+  # got: sha256-173gxk0ymiw94glyjzjizp8bv8g72gwkjhacigd1an09jshdrjb4
+  # take it and put into the hash = value
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        tmux = prev.tmux.overrideAttrs (old: {
+          src = prev.fetchFromGitHub {
+            owner = "tmux";
+            repo = "tmux";
+            rev = "3.4";
+            hash = "sha256-RX3RZ0Mcyda7C7im1r4QgUxTnp95nfpGgQ2HRxr0s64=";
+          };
+        });
+      })
+    ];
+  };
 
 }

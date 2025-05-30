@@ -30,7 +30,6 @@ require("lazy").setup({
 	install = {
 		missing = true,
 		colorscheme = {
-			utils.colorscheme,
 			"retrobox",
 			"habamax",
 		},
