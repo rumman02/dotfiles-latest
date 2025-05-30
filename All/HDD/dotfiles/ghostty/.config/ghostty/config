@@ -1,0 +1,444 @@
+#   _____ _    _  ____   _____ _______ _________     __
+#  / ____| |  | |/ __ \ / ____|__   __|__   __\ \   / /
+# | |  __| |__| | |  | | (___    | |     | |   \ \_/ /
+# | | |_ |  __  | |  | |\___ \   | |     | |    \   /
+# | |__| | |  | | |__| |____) |  | |     | |     | |
+#  \_____|_|  |_|\____/|_____/   |_|     |_|     |_|
+# https://ghostty.org/docs/config
+
+# ----------------------------------------------------------------------------- removes default
+# window bar
+window-decoration = false
+# confirm on close
+confirm-close-surface = false
+# all keybinds
+keybind = clear
+# cursor behaviour
+shell-integration-features = no-cursor,no-title
+
+# ----------------------------------------------------------------------------- fonts
+font-family = "Iosevka Medium Extended"
+font-size = 10.5
+
+# for default font
+# font-size = 10
+
+# ----------------------------------------------------------------------------- window
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
+window-vsync = true
+
+# ----------------------------------------------------------------------------- colorscheme
+theme = tokyonight_night
+window-theme = ghostty
+window-colorspace = "display-p3"
+
+# ----------------------------------------------------------------------------- cursor
+adjust-cursor-thickness = 1
+mouse-hide-while-typing = true
+
+# ----------------------------------------------------------------------------- quick terminal
+quick-terminal-position = top
+quick-terminal-screen = main
+
+# ----------------------------------------------------------------------------- updates
+auto-update = check
+auto-update-channel = stable
+
+# ----------------------------------------------------------------------------- others
+scrollback-limit = 10000
+shell-integration = zsh
+
+# ----------------------------------------------------------------------------- keybinds
+# all keys name
+# https://github.com/ghostty-org/ghostty/blob/d6e76858164d52cff460fedc61ddf2e560912d71/src/input/key.zig#L255
+# -------------------------------------- window
+# open
+keybind = ctrl+alt+w>o>h=new_split:left
+keybind = ctrl+alt+w>o>j=new_split:down
+keybind = ctrl+alt+w>o>k=new_split:up
+keybind = ctrl+alt+w>o>l=new_split:right
+# close
+keybind = ctrl+alt+w>x=close_surface
+# resize
+keybind = ctrl+alt+left=resize_split:left,10
+keybind = ctrl+alt+down=resize_split:down,10
+keybind = ctrl+alt+up=resize_split:up,10
+keybind = ctrl+alt+right=resize_split:right,10
+keybind = ctrl+alt+w>r>e=equalize_splits
+keybind = ctrl+alt+w>r>m=toggle_split_zoom
+keybind = ctrl+alt+w>r>f=toggle_fullscreen
+# decoration
+keybind = ctrl+alt+space>w>d=toggle_window_decorations
+
+# -------------------------------------- app widnow
+# open
+keybind = ctrl+alt+n=new_window
+# close
+# keybind = ctrl+alt+q>c=close_window
+keybind = ctrl+alt+q>c=quit
+# these are supports on mac only
+keybind = ctrl+alt+q>a=close_all_windows
+
+# -------------------------------------- tab
+# open
+keybind = ctrl+alt+t>o=new_tab
+# swap
+keybind = ctrl+alt+t>s>h=move_tab:-1
+keybind = ctrl+alt+t>s>l=move_tab:+1
+
+# -------------------------------------- font
+keybind = ctrl+alt+equal=increase_font_size:1
+keybind = ctrl+alt+minus=decrease_font_size:1
+keybind = ctrl+alt+0=reset_font_size
+
+# -------------------------------------- selection
+keybind = ctrl+alt+shift+a=select_all
+keybind = ctrl+alt+shift+up=adjust_selection:up
+keybind = ctrl+alt+shift+down=adjust_selection:down
+keybind = ctrl+alt+shift+left=adjust_selection:left
+keybind = ctrl+alt+shift+right=adjust_selection:right
+keybind = ctrl+alt+shift+page_up=adjust_selection:page_up
+keybind = ctrl+alt+shift+page_down=adjust_selection:page_down
+keybind = ctrl+alt+shift+home=adjust_selection:home
+keybind = ctrl+alt+shift+end=adjust_selection:end
+
+# -------------------------------------- others
+keybind = ctrl+alt+y=copy_to_clipboard
+keybind = ctrl+alt+p=paste_from_clipboard
+keybind = ctrl+alt+comma=reload_config
+keybind = ctrl+alt+i=inspector:toggle
+keybind = ctrl+alt+tab=jump_to_prompt:1
+# these are supports on mac only
+keybind = ctrl+alt+v=toggle_visibility
+keybind = ctrl+alt+c=clear_screen
+
+# -------------------------------------- navigation
+# scroll
+keybind = ctrl+alt+u=scroll_page_up
+keybind = ctrl+alt+d=scroll_page_down
+keybind = ctrl+alt+g>g=scroll_to_top
+keybind = ctrl+alt+shift+g=scroll_to_bottom
+keybind = ctrl+alt+y=scroll_page_lines:-1
+keybind = ctrl+alt+e=scroll_page_lines:1
+# window
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:bottom
+keybind = ctrl+alt+k=goto_split:top
+keybind = ctrl+alt+l=goto_split:right
+# tab
+keybind = ctrl+alt+shift+h=previous_tab 
+keybind = ctrl+alt+shift+l=next_tab
+keybind = ctrl+alt+t>z=last_tab
+
+keybind = ctrl+alt+1=goto_tab:1
+keybind = ctrl+alt+2=goto_tab:2
+keybind = ctrl+alt+3=goto_tab:3
+keybind = ctrl+alt+4=goto_tab:4
+keybind = ctrl+alt+5=goto_tab:5
+keybind = ctrl+alt+6=goto_tab:6
+keybind = ctrl+alt+7=goto_tab:7
+keybind = ctrl+alt+8=goto_tab:8
+keybind = ctrl+alt+9=goto_tab:9
+keybind = ctrl+alt+0=goto_tab:10
+
+keybind = ctrl+alt+t>1=goto_tab:1
+keybind = ctrl+alt+t>2=goto_tab:2
+keybind = ctrl+alt+t>3=goto_tab:3
+keybind = ctrl+alt+t>4=goto_tab:4
+keybind = ctrl+alt+t>5=goto_tab:5
+keybind = ctrl+alt+t>6=goto_tab:6
+keybind = ctrl+alt+t>7=goto_tab:7
+keybind = ctrl+alt+t>8=goto_tab:8
+keybind = ctrl+alt+t>9=goto_tab:9
+keybind = ctrl+alt+t>p=toggle_tab_overview
+
+# -------------------------------------- disabled
+# super key
+keybind = super=ignore
+keybind = cmd=ignore
+keybind = command=ignore
+
+# ----------------------------------------------------------------------------- custom shaders
+# https://github.com/hackrmomo/ghostty-shaders
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/crt.glsl
+# custom-shader = shaders/cubes.glsl
+# custom-shader = shaders/gradient-background.glsl
+# custom-shader = shaders/just-snow.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+# custom-shader = shaders/tft.glsl
+# custom-shader = shaders/underwater.glsl
+# custom-shader = shaders/water.glsl
+# custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/dither.glsl
+# custom-shader = shaders/drunkard.glsl
+# custom-shader = shaders/fireworks.glsl
+# custom-shader = shaders/fireworks-rockets.glsl
+# custom-shader = shaders/gears-and-belts.glsl
+# custom-shader = shaders/inside-the-matrix.glsl
+# custom-shader = shaders/matrix-hallway.glsl
+# custom-shader = shaders/glitchy.glsl
+# custom-shader = shaders/glow-rgbsplit-twitchy.glsl
+# custom-shader = shaders/negative.glsl
+# custom-shader = shaders/retro-terminal.glsl
+# custom-shader = shaders/smoke-and-ghost.glsl
+# custom-shader = shaders/sparks-from-fire.glsl
+# custom-shader = shaders/spotlight.glsl
+
+# ----------------------------------------------------------------------------- key escape sequences
+# found keyname: https://sw.kovidgoyal.net/kitty/keyboard-protocol/#functional-key-definitions
+
+#NOTE: To achive that in many way
+# 1. Inside nvim(outside tmux) in insert mode <C-k> and press that key that how its supports
+# 2. Inside nvim in terminal mode command(outside tmux): kitten show-key, get that send_text
+# 3. In terminal command(outside tmux): kitten show-key -m kitty, get keycode like
+# 	 only focus on PRESS, not RELEASE or anything else
+#		 (ex:
+#		 ctrl+space PRESS
+#		 CSI 32 ; 5 u
+#		 ), then map your key without "CSI" keyword like
+#		 map ctrl+space send_text all \x1b[32;5u
+#	4. some keypreset is:
+#		 shift+<key> = \x1b[<keycode>;2u
+#		 alt+<key> = \x1b[<keycode>;3u
+#		 alt+shift+<key> = \x1b[<keycode>;4u
+#		 ctrl+<key> = \x1b[<keycode>;5u
+#		 ctrl+shift+<key> = \x1b[<keycode>;6u
+#		 ctrl+alt+<key> = \x1b[<keycode>;7u
+#		 ctrl+alt+shift+<key> = \x1b[<keycode>;8u
+#		 super+<key> = \x1b[<keycode>;9u
+#		 super+shift+<key> = \x1b[<keycode>;10u
+#		 alt+super+<key> = \x1b[<keycode>;11u
+#		 alt+shift+super+<key> = \x1b[<keycode>;12u
+#		 ctrl+super+<key> = \x1b[<keycode>;13u
+#		 ctrl+shift+super+<key> = \x1b[<keycode>;14u
+#		 ctrl+alt+super+<key> = \x1b[<keycode>;15u
+#		 ctrl+alt+shift+super+<key> = \x1b[<keycode>;16u
+
+#=======================================================#
+#                       F-1 - F-12                      #
+#=======================================================#
+# ---------- before ----------
+# F: <F1><F2><F3><F4><F5><F6><F7><F8><F9><F10><F11><F12>
+#
+# Shift + F: <F13><F14><F15><F16><F17><F18><F19><F20><F21><F22><F23><F24>
+# Ctrl + F: <F25><F26><F27><F28><F29><F30><F31><F32><F33><F34><F35><F36>
+# Ctrl + Shift + F: <F37><F38><F39><F40><F41><F42><F43><F44><F45><F46><F47><F48>
+# Alt + F: <F49><F50><F51><F52><F53><F54><F55><F56><F57><F58><F59><F60>
+# Alt + Shift + F: <F61><F62><F63><M-S-F4><M-S-F5><M-S-F6><M-S-F7><M-S-F8><M-S-F9><M-S-F10><M-S-F11><M-S-F12>
+#
+# Ctrl + Alt + F: <M-C-F1><M-C-F2><M-C-F3><M-C-F4><M-C-F5><M-C-F6><M-C-F7><M-C-F8><M-C-F9><M-C-F10><M-C-F11><M-C-F12>
+#
+# Ctrl + Alt + Shift + F: <M-C-S-F1> <M-C-S-F2> <M-[>13;8~ <M-C-S-F4> <M-C-S-F5> <M-C-S-F6> <M-C-S-F7> <M-C-S-F8> <M-C-S-F9> <M-C-S-F10> <M-C-S-F11> <M-C-S-F12>
+
+# ---------- after ----------
+# fix was <M-[>13;8~ to <M-C-S-F3>
+keybind = ctrl+alt+shift+f3=text:\x1b[1;8R
+
+#=======================================================#
+#                         0 - 9                         #
+#=======================================================#
+# ---------- before ----------
+# 0: 0123456789
+#
+# Shift + 0: )!@#$%^&*(
+# Alt + 0: <M-0><M-1><M-2><M-3><M-4><M-5><M-6><M-7><M-8><M-9>
+# Ctrl + 0: 1<C-Space>      <BS>90
+#
+# Ctrl + Shift + 0: )!<C-Space>#$%  &*(
+# Alt + Shift + 0: <M-)><M-!><M-@><M-#><M-$><M-%><M-^><M-&><M-*><M-(>
+#
+# Ctrl + Alt + 0: <M-0><M-1><M-C-Space><M-Esc><M-C-\><M-C-]><M-C-^><M-C-_><M-BS><M-9>
+#
+# Ctrl + Alt + Shift + 0: <M-)><M-!><M-C-Space><M-#><M-$><M-%><M-C-^><M-&><M-*><M-(>
+
+# ---------- after ----------
+keybind = ctrl+0=text:\x1b[48;5u
+keybind = ctrl+1=text:\x1b[49;5u
+keybind = ctrl+2=text:\x1b[50;5u
+keybind = ctrl+3=text:\x1b[51;5u
+keybind = ctrl+4=text:\x1b[52;5u
+keybind = ctrl+5=text:\x1b[53;5u
+keybind = ctrl+6=text:\x1b[54;5u
+keybind = ctrl+7=text:\x1b[55;5u
+keybind = ctrl+8=text:\x1b[56;5u
+keybind = ctrl+9=text:\x1b[57;5u
+
+keybind = ctrl+shift+0=text:\x1b[48;6u
+keybind = ctrl+shift+1=text:\x1b[49;6u
+keybind = ctrl+shift+2=text:\x1b[50;6u
+keybind = ctrl+shift+3=text:\x1b[51;6u
+keybind = ctrl+shift+4=text:\x1b[52;6u
+keybind = ctrl+shift+5=text:\x1b[53;6u
+keybind = ctrl+shift+6=text:\x1b[54;6u
+keybind = ctrl+shift+7=text:\x1b[55;6u
+keybind = ctrl+shift+8=text:\x1b[56;6u
+keybind = ctrl+shift+9=text:\x1b[57;6u
+
+keybind = alt+shift+0=text:\x1b[48;4u
+keybind = alt+shift+1=text:\x1b[49;4u
+keybind = alt+shift+2=text:\x1b[50;4u
+keybind = alt+shift+3=text:\x1b[51;4u
+keybind = alt+shift+4=text:\x1b[52;4u
+keybind = alt+shift+5=text:\x1b[53;4u
+keybind = alt+shift+6=text:\x1b[54;4u
+keybind = alt+shift+7=text:\x1b[55;4u
+keybind = alt+shift+8=text:\x1b[56;4u
+keybind = alt+shift+9=text:\x1b[57;4u
+
+keybind = ctrl+alt+0=text:\x1b[48;7u
+keybind = ctrl+alt+1=text:\x1b[49;7u
+keybind = ctrl+alt+2=text:\x1b[50;7u
+keybind = ctrl+alt+3=text:\x1b[51;7u
+keybind = ctrl+alt+4=text:\x1b[52;7u
+keybind = ctrl+alt+5=text:\x1b[53;7u
+keybind = ctrl+alt+6=text:\x1b[54;7u
+keybind = ctrl+alt+7=text:\x1b[55;7u
+keybind = ctrl+alt+8=text:\x1b[56;7u
+keybind = ctrl+alt+9=text:\x1b[57;7u
+
+keybind = ctrl+alt+shift+0=text:\x1b[48;8u
+keybind = ctrl+alt+shift+1=text:\x1b[49;8u
+keybind = ctrl+alt+shift+2=text:\x1b[50;8u
+keybind = ctrl+alt+shift+3=text:\x1b[51;8u
+keybind = ctrl+alt+shift+4=text:\x1b[52;8u
+keybind = ctrl+alt+shift+5=text:\x1b[53;8u
+keybind = ctrl+alt+shift+6=text:\x1b[54;8u
+keybind = ctrl+alt+shift+7=text:\x1b[55;8u
+keybind = ctrl+alt+shift+8=text:\x1b[56;8u
+keybind = ctrl+alt+shift+9=text:\x1b[57;8u
+
+#=======================================================#
+#                  , . / ; ' [ ] \ - = `                #
+#=======================================================#
+# ---------- before ----------
+#       									,./;'[]\-=`
+#
+# ctrl +									,. ;'   -=`
+# alt + 									<M-,><M-.><M-/><M-;><M-'><M-[><M-]><M-Bslash><M--><M-=><M-`>
+# shit +									<>?:"{}|_+~
+#
+# ctrl + shift + 					<><BS>:"{}| + 
+# alt + shift + 					<M-lt><M->><M-?><M-:><M-"><M-{><M-}><M-Bar><M-_><M-+><M-~>
+#
+# ctrl + alt + 						<M-,><M-.><M-C-_><M-;><M-'><M-Esc><M-C-]><M-C-\><M--><M-=><M-`>
+#
+# ctrl + alt + shift + 		<M-lt><M->><M-BS><M-:><M-"><M-{><M-}><M-Bar><M-C-_><M-+><M-C-^>
+
+# ---------- after ----------
+keybind = ctrl+comma=text:\x1b[44;5u
+keybind = ctrl+period=text:\x1b[46;5u
+keybind = ctrl+slash=text:\x1b[47;5u
+keybind = ctrl+semicolon=text:\x1b[59;5u
+keybind = ctrl+apostrophe=text:\x1b[39;5u
+keybind = ctrl+left_bracket=text:\x1b[91;5u
+keybind = ctrl+right_bracket=text:\x1b[93;5u
+keybind = ctrl+backslash=text:\x1b[92;5u
+keybind = ctrl+minus=text:\x1b[45;5u
+keybind = ctrl+equal=text:\x1b[61;5u
+keybind = ctrl+grave_accent=text:\x1b[96;5u
+
+keybind = ctrl+shift+comma=text:\x1b[44;6u
+keybind = ctrl+shift+period=text:\x1b[46;6u
+keybind = ctrl+shift+slash=text:\x1b[47;6u
+keybind = ctrl+shift+semicolon=text:\x1b[59;6u
+keybind = ctrl+shift+apostrophe=text:\x1b[39;6u
+keybind = ctrl+shift+left_bracket=text:\x1b[91;6u
+keybind = ctrl+shift+right_bracket=text:\x1b[93;6u
+keybind = ctrl+shift+backslash=text:\x1b[92;6u
+keybind = ctrl+shift+minus=text:\x1b[45;6u
+keybind = ctrl+shift+equal=text:\x1b[61;6u
+keybind = ctrl+shift+grave_accent=text:\x1b[96;6u
+
+keybind = ctrl+alt+comma=text:\x1b[44;7u
+keybind = ctrl+alt+period=text:\x1b[46;7u
+keybind = ctrl+alt+slash=text:\x1b[47;7u
+keybind = ctrl+alt+semicolon=text:\x1b[59;7u
+keybind = ctrl+alt+apostrophe=text:\x1b[39;7u
+keybind = ctrl+alt+left_bracket=text:\x1b[91;7u
+keybind = ctrl+alt+right_bracket=text:\x1b[93;7u
+keybind = ctrl+alt+backslash=text:\x1b[92;7u
+keybind = ctrl+alt+minus=text:\x1b[45;7u
+keybind = ctrl+alt+equal=text:\x1b[61;7u
+keybind = ctrl+alt+grave_accent=text:\x1b[96;7u
+
+keybind = ctrl+alt+shift+comma=text:\x1b[44;8u
+keybind = ctrl+alt+shift+period=text:\x1b[46;8u
+keybind = ctrl+alt+shift+slash=text:\x1b[47;8u
+keybind = ctrl+alt+shift+semicolon=text:\x1b[59;8u
+keybind = ctrl+alt+shift+apostrophe=text:\x1b[39;8u
+keybind = ctrl+alt+shift+left_bracket=text:\x1b[91;8u
+keybind = ctrl+alt+shift+right_bracket=text:\x1b[93;8u
+keybind = ctrl+alt+shift+backslash=text:\x1b[92;8u
+keybind = ctrl+alt+shift+minus=text:\x1b[45;8u
+keybind = ctrl+alt+shift+equal=text:\x1b[61;8u
+keybind = ctrl+alt+shift+grave_accent=text:\x1b[96;8u
+
+#=======================================================#
+#             <CR> <BS> <Tab> <Esc> <Space>             #
+#=======================================================#
+# ---------- before ----------
+# Shift + : <S-Tab><BS>
+# Alt + : <M-CR><M-Tab><M-BS><M-Esc><M-Space>
+# Ctrl + : <C-Space>
+#
+# Ctrl + Shift + : <S-Tab><C-Space>
+# Alt + Shift + : <M-CR><M-S-tab><M-BS><M-Esc><M-Space>
+#
+# Ctrl + Alt + : <M-CR><M-Tab><M-C-H><M-Esc><M-C-Space>
+#
+# Ctrl + Alt + Shift + : <M-CR><M-S-tab><M-C-H><M-Esc><M-C-S-Space>
+#
+# ---------- after ----------
+keybind = shift+enter=text:\x1b[13;2u
+keybind = shift+tab=text:\x1b[9;2u
+keybind = shift+backspace=text:\x1b[127;2u
+keybind = shift+escape=text:\x1b[27;2u
+keybind = shift+space=text:\x1b[32;2u
+
+keybind = alt+enter=text:\x1b[13;3u
+keybind = alt+tab=text:\x1b[9;3u
+keybind = alt+backspace=text:\x1b[127;3u
+keybind = alt+escape=text:\x1b[27;3u
+keybind = alt+space=text:\x1b[32;3u
+
+keybind = alt+shift+enter=text:\x1b[13;4u
+keybind = alt+shift+tab=text:\x1b[9;4u
+keybind = alt+shift+backspace=text:\x1b[127;4u
+keybind = alt+shift+escape=text:\x1b[27;4u
+keybind = alt+shift+space=text:\x1b[32;4u
+
+keybind = ctrl+enter=text:\x1b[13;5u
+keybind = ctrl+tab=text:\x1b[9;5u
+keybind = ctrl+backspace=text:\x1b[127;5u
+keybind = ctrl+escape=text:\x1b[27;5u
+keybind = ctrl+space=text:\x1b[32;5u
+
+keybind = ctrl+shift+enter=text:\x1b[13;6u
+keybind = ctrl+shift+tab=text:\x1b[9;6u
+keybind = ctrl+shift+backspace=text:\x1b[127;6u
+keybind = ctrl+shift+escape=text:\x1b[27;6u
+keybind = ctrl+shift+space=text:\x1b[32;6u
+
+keybind = ctrl+alt+enter=text:\x1b[13;7u
+keybind = ctrl+alt+tab=text:\x1b[9;7u
+keybind = ctrl+alt+backspace=text:\x1b[127;7u
+keybind = ctrl+alt+escape=text:\x1b[27;7u
+keybind = ctrl+alt+space=text:\x1b[32;7u
+
+keybind = ctrl+alt+shift+enter=text:\x1b[13;8u
+keybind = ctrl+alt+shift+tab=text:\x1b[9;8u
+keybind = ctrl+alt+shift+backspace=text:\x1b[127;8u
+keybind = ctrl+alt+shift+escape=text:\x1b[27;8u
+keybind = ctrl+alt+shift+space=text:\x1b[32;8u
+

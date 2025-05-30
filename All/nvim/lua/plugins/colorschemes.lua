@@ -1,0 +1,115 @@
+return {
+    {
+        "ellisonleao/gruvbox.nvim",
+        enabled = require("plug_controller").colorschemes.gruvbox,
+        lazy = false,
+        priority = 1000,
+        cmd = "Colorscheme gruvbox",
+        opts = {
+            overrides = {
+                SignColumn = { bg = "none" },
+                FlashLabel = { fg = "#fabd2f" },
+                DiagnosticSignError = { fg = "#fb4934", bg = "none" },
+                DiagnosticSignHint = { fg = "#8ec07c", bg = "none" },
+                DiagnosticSignWarn = { fg = "#fabd2f", bg = "none" },
+                MiniIndentscopeSymbol = { fg = "#fe8019", bg = "none" },
+                WinSeparator = { fg = "#212121", bg = "none" },
+                NeoTreeNormal = { fg = "none", bg = "#212121" },
+                NeoTreeNormalNC = { fg = "none", bg = "#212121" },
+                TelescopeTitle = { fg = "#665c54", bg = "none" },
+                TelescopeResultsBorder = { fg = "#665c54", bg = "none" },
+                TelescopePreviewBorder = { fg = "#665c54", bg = "none" },
+                TelescopePromptBorder = { fg = "#665c54", bg = "none" },
+                WhichKeyBorder = { fg = "#665c54", bg = "none" },
+                WhichKeyNormal = { fg = "#665c54", bg = "none" },
+                TroubleNormal = { fg = "none", bg = "#212121" },
+                TroubleNormalNC = { fg = "none", bg = "#212121" },
+                TroubleCount = { fg = "#b8bb26", bg = "#212121" },
+                MarkSignNumHL = { fg = "#665c54", bg = "none" },
+                Folded = { fg = "#665c54", bg = "none" },
+                FoldColumn = { fg = "#665c54", bg = "none" },
+                CursorLineFold = { fg = "#665c54", bg = "none" },
+
+                RenderMarkdownH1Bg = { fg = "#282828", bg = "#fb4934" },
+                RenderMarkdownH2Bg = { fg = "#282828", bg = "#fe8019" },
+                RenderMarkdownH3Bg = { fg = "#282828", bg = "#fabd2f" },
+                RenderMarkdownH4Bg = { fg = "#282828", bg = "#b8bb26" },
+                RenderMarkdownH5Bg = { fg = "#282828", bg = "#83a598" },
+                RenderMarkdownH6Bg = { fg = "#ebdbb2", bg = "#504945" },
+
+                NeoTreeFloatBorder = { fg = "none", bg = "#212121" },
+                NeoTreeFloatTitle = { fg = "none", bg = "#212121" },
+                NeoTreeFloatNormal = { bg = "#212121" },
+                SnacksNormal = { bg = "#212121" },
+                SnacksNormalNC = { bg = "#212121" },
+                InclineNormal = { fg = "#fbf1c7", bg = "#504945" },
+                CleverFChar = { bg = "#ff0000", fg = "#000000" },
+                Comment = { bg = "none", fg = "#504945" },
+                -- BlinkCmpMenu = { bg = "#212121", fg = "none" },
+                BlinkCmpMenu = { bg = "#282828", fg = "none" },
+                BlinkCmpMenuBorder = { bg = "#282828", fg = "none" },
+                BlinkCmpDoc = { bg = "#282828", fg = "none" },
+                BlinkCmpDocBorder = { bg = "#282828", fg = "none" },
+                BlinkCmpMenuSelection = { bg = "#3c3836", fg = "none" },
+            },
+        },
+        config = function(_, opts)
+            require("gruvbox").setup(opts)
+            vim.cmd("colorscheme gruvbox")
+        end,
+    },
+
+    {
+        "folke/tokyonight.nvim",
+        enabled = require("plug_controller").colorschemes.tokyonight,
+        lazy = false,
+        priority = 1000,
+        cmd = "Colorscheme tokyonight",
+        opts = {
+            style = "night",
+        },
+        config = function(_, opts)
+            require("tokyonight").setup(opts)
+            vim.cmd("colorscheme tokyonight")
+        end,
+    },
+
+    {
+        "rose-pine/neovim",
+        enabled = require("plug_controller").colorschemes.rose_pine,
+        name = "Rose pine",
+        lazy = false,
+        priority = 1000,
+        cmd = "Colorscheme rose-pine",
+        opts = {
+            variant = "main",
+        },
+        config = function(_, opts)
+            vim.cmd("colorscheme rose-pine")
+        end,
+    },
+    {
+        "dracula/vim",
+        enabled = require("plug_controller").colorschemes.dracula,
+        name = "dracula",
+        lazy = false,
+        priority = 1000,
+        cmd = "Colorscheme dracula",
+        opts = {},
+        config = function()
+            vim.cmd("colorscheme dracula")
+        end,
+    },
+    {
+        "catppuccin/nvim",
+        enabled = require("plug_controller").colorschemes.catppuccin,
+        name = "Catppuccin",
+        lazy = false,
+        priority = 1000,
+        cmd = "Colorscheme catppuccin",
+        opts = {},
+        config = function()
+            vim.cmd("colorscheme catppuccin")
+        end,
+    }
+}

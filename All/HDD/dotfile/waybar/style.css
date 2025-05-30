@@ -1,0 +1,112 @@
+/* ---------------------------------------------------- */
+/* 							all							*/
+/* ---------------------------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/* ---------------------------------------------------- */
+/* 					waybar modules						*/
+/* ---------------------------------------------------- */
+.modules-left, .modules-center, .modules-right {
+	border-radius: 25px;
+	color: white;
+}
+
+
+.modules-right * {
+	border-radius: 25px;
+	padding: 0 15px;
+	background: rgba(0, 0, 0, 0.1);
+	/*border: 2px solid rgba(250, 189, 47, 1);*/
+	font-weight: bold;
+	color: white;
+}
+
+/* ---------------------------------------------------- */
+/* 					waybar window						*/
+/* ---------------------------------------------------- */
+window#waybar {
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 14px;
+	font-weight: bold;
+	background: transparent;
+}
+
+/* ---------------------------------------------------- */
+/* 					hyprland window						*/
+/* ---------------------------------------------------- */
+#window {
+	color: rgba(255, 255, 255, 0.8);
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 25px;
+	padding: 0 15px;
+}
+#window.title {
+	color: rgba(255, 255, 255, 0.8);
+	/*background: rgba(0, 0, 0, 0.1);*/
+	background: red;
+	border-radius: 25px;
+	padding: 0 15px;
+}
+
+/* ---------------------------------------------------- */
+/* 					hyprland workspaces					*/
+/* ---------------------------------------------------- */
+#workspaces {
+	border: none;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 25px;
+}
+#workspaces button {
+	color: rgba(255, 255, 255, 1);
+	padding: 0 10px;
+}
+#workspaces button:hover {
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 50px;
+	padding: 0 8px;
+	background: transparent;
+}
+#workspaces button.active:hover {
+	border: none;
+}
+#workspaces button.active {
+	margin: 0;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 0 20px;
+	border-radius: 50px;
+}
+#workspaces button.empty {
+	color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------------------------------------------------- */
+/* 					hyprland submap						*/
+/* ---------------------------------------------------- */
+#submap {
+	border-radius: 25px;
+	padding: 0 10px;
+	min-width: 100px;
+	color: rgba(204, 36, 29, 1);
+	font-weight: bold;
+	background: rgba(250, 189, 47, 1);
+}
+
+/* ---------------------------------------------------- */
+/* 						other							*/
+/* ---------------------------------------------------- */
+#clock {
+}
+#cpu {
+}
+#network {
+}
+#memory {
+}
+#pulseaudio {
+	font-size: 20px;
+}

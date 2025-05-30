@@ -1,0 +1,112 @@
+{
+	// ---------------------------------------------------- //
+	// 						waybar setting					//
+	// ---------------------------------------------------- //
+	"layer" : "top",
+	"position": "top",
+	"height" : 30,
+	"spacing" : 0,
+	"reload_style_on_change" : true,
+	"margin": "5, 5, 0, 5",
+	// ---------------------------------------------------- //
+	// 						waybar modules					//
+	// ---------------------------------------------------- //
+	"modules-left" : [
+		"hyprland/window"
+	],
+	"modules-center" : [
+		"hyprland/workspaces"
+	],
+	"modules-right" : [
+		"hyprland/submap",
+		"cpu",
+		"pluseaudio",
+		"network",
+		"memory",
+		"wireplumber",
+		"custom/brightness",
+		"clock"
+	],
+	// ---------------------------------------------------- //
+	// 				hyprland modules setting				//
+	// ---------------------------------------------------- //
+	"hyprland/workspaces": {
+		//"on-click": "activate",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": []
+		},
+		"show-special": true
+		//"special-visible-only": true
+	},
+	"hyprland/submap": {
+		"on-click": "~/dotfile/script/waybar/submap_on_click.sh",
+		"always-on": false
+	},
+	"hyprland/window": {
+		"format": "{title}",
+		"max-length": 50,
+		"icon": true,
+		"icon-size": 20
+	},
+	// ---------------------------------------------------- //
+	// 					other modules setting				//
+	// ---------------------------------------------------- //
+	"clock": {
+		"on-click": "gnome-calendar",
+		"format": "{:%a %d, %b %I:%M %p}",
+		"interval": 1
+    },
+	"wireplumber": {
+		"format": " {volume}",
+		"format-muted": "󰖁",
+		"states": {
+			"󰕿 ": "30%",
+			"󰖀 ": "50%"
+		},
+
+		"on-click": "helvum",
+		"format-icons": ["󰕿", "󰖀", "󰕾"],
+		"scroll-step": 1.0
+	},
+	"network": {
+		"on-click": "({bandwidthUpBits})",
+		"format-ethernet": "  {ipaddr}/{cidr}",
+		"format-wifi": "  {essid}({signalStrength})",
+        "format-disconnected": " "
+    },
+	"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	// ---------------------------------------------------- //
+	// 					custom modules setting				//
+	// ---------------------------------------------------- //
+	"custom/brightness": {
+		"format": "󰃞 {}",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"exec": "~/dotfile/script/waybar/get_brightness_val.sh",
+		"restart-interval": 10
+	}
+}

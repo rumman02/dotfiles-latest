@@ -1,0 +1,25 @@
+{
+	"name": "Vimium C",
+	"@time": "10/22/2024, 10:47:51 AM",
+	"time": 1729572471249,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "linux",
+		"firefox": 1
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "/ < > ",
+			"pattern": ":https://www.youtube.com/"
+		}
+	],
+	"keyLayout": 18,
+	"keyMappings": [
+		"#!no-check",
+		"map K previousTab",
+		"map J nextTab",
+		""
+	],
+	"vimSync": true,
+	"ignoreCapsLock": 2
+}

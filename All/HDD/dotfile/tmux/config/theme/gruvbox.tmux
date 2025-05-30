@@ -1,0 +1,21 @@
+set -g @plugin "janders223/gruvbox-tmux"				# gruvbox theme - more settings
+set -g @gruvbox-show-battery false
+set -g @gruvbox-show-network false
+set -g @gruvbox-show-weather false
+set -g @gruvbox-show-time true
+set -g @gruvbox-show-location false
+set -g @gruvbox-show-fahrenheit false
+set -g @gruvbox-show-powerline true
+set -g @gruvbox-show-left-sep "▓▒░"
+set -g @gruvbox-show-right-sep "░▒▓"
+set -g @gruvbox-show-flags false
+set -g @gruvbox-show-timezone false
+set -g @gruvbox-show-left-icon session      			# session, smiley, window, or any characters
+set -g @gruvbox-refresh-rate 1
+set -g @gruvbox-military-time false
+set -g @gruvbox-left-icon-padding 0         			# 1 enable 0 disable
+set -g @gruvbox-border-contrast true
+set -g @gruvbox-ram-usage true
+set -g @gruvbox-cpu-usage true
+set -g @gruvbox-gpu-usage false
+set -g @gruvbox-day-month true

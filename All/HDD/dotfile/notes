@@ -1,0 +1,2 @@
+grep -i "installed" /var/log/pacman.log | awk -v date="$(date +"%Y-%m-%d %H:%M" -d "1 hour ago")" '$0 > date'
+

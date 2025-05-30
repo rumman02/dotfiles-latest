@@ -1,0 +1,1 @@
+/nix/store/bccd6x56nlh49wswh6yxb2wnpwz1zs6g-home-manager-files/.config/hypr/scripts/window_border.sh

@@ -1,0 +1,6 @@
+youtube.com###page-manager:has(ytd-watch-flexy:not([hidden])):style(margin-top: 0 !important;)
+youtube.com###full-bleed-container:has(#player-container):style(max-height: 100vh !important;height: 100vh !important;)
+youtube.com###content:has(ytd-watch-flexy:not([hidden])) #masthead-container:style(translate: 0 -80%!important;transition: .3s ease !important;)
+youtube.com###content:has(ytd-watch-flexy:not([hidden])) #masthead-container:is(:hover, :focus-within):style(translate: 0 0 !important;)
+youtube.com##+js(set, ytcfg.data_.START_IN_FULL_WINDOW_MODE, true)
+youtube.com##ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container:style(max-height: calc(100vh - 56px) !important;height: calc(100vh - 56px) !important;)

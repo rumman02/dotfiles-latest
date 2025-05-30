@@ -1,0 +1,34 @@
+--notes------------------------------------------------
+
+-- checkout folding methods and fold related things
+-- checout https://github.com/nvim-neo-tree/neo-tree.nvim?tab=readme-ov-file#document_symbols for document symbols, after installing lsp of "textDocument/documentSymbols"
+-- checkout flash.nvim doc for Telescope integration 
+-- checkout alpha-fag of disable the plugins while in alpha, also tabline etc
+-- checkout auto-session for session lens when telescope installed
+
+
+
+Please note that the override values must follow the attributes from the
+highlight group map, such as:
+
+- **fg** - foreground color
+- **bg** - background color
+- **bold** - true or false for bold font
+- **italic** - true or false for italic font
+
+
+--others------------------------------------------------
+-- commands for removing cache and others for make refresh neovim
+rm -rf /Users/rumman/.cache/nvim
+rm -rf /usr/local/etc/xdg/nvim
+rm -rf /etc/xdg/nvim
+rm -rf /usr/local/share/nvim
+rm -rf /usr/share/nvim
+rm -rf /Users/rumman/.local/share/nvim
+rm -rf /Users/rumman/.local/state/nvim
+
+-- this is main config file, delete it if you need
+rm -rf /Users/rumman/.config/nvim
+
+-- this is the neovim itself
+rm -rf /usr/local/Cellar/neovim

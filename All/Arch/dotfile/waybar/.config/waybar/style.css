@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+}
+
+window {
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 12px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	background: transparent;
+    transition: all 0.1s ease-in-out;
+}
+
+#group-power, #workspaces, #window, #submap, #cpu, #custom-gpu-usage, #memory, #disk, #network, #wireplumber, #custom-pipewire, #custom-brightness, #clock {
+	border: 2px solid;
+}
+#group-power, #workspaces, #workspaces button, #window, #submap, #cpu, #custom-gpu-usage, #memory, #disk, #network, #wireplumber, #custom-pipewire, #custom-brightness, #clock {
+	border-radius: 25px;
+}
+
+#group-power, #workspaces, #window {
+	margin-left: 10px;
+}
+
+#clock, #custom-brightness, #network, #disk, #custom-updates, #submap {
+	margin-right: 10px;
+}
+#workspaces button.active, #window, #submap, #cpu, #custom-gpu-usage, #memory, #disk, #network, #wireplumber, #custom-pipewire, #custom-brightness, #clock  {
+	padding-right: 15px;
+}
+#workspaces button.active, #window, #submap, #cpu, #network, #wireplumber, #custom-pipewire, #clock {
+	padding-left: 15px;
+}
+#group-power * {
+	padding: 0 5px;
+}
+#group-power:last-child {
+	padding-right: 3px;
+}
+#network {
+	/*fix network alignment*/
+	padding-left: 12px;
+}
+
+#custom-gpu-usage, #memory {
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 0;
+}
+#cpu, #custom-pipewire, #wireplumber {
+	border-right: 0px;
+	border-radius: 25px 0px 0 25px;
+}
+#disk, #custom-brightness {
+	border-left: 0px;
+	border-radius: 0 25px 25px 0;
+}
+
+#window {
+	border-color: rgba(189, 174, 147, 1);
+	background-color: rgba(189, 174, 147, 0.5);
+}
+
+#workspaces {
+	border-color: rgba(215, 153, 33, 1);
+	background-color: rgba(215, 153, 33, 0.3);
+}
+#workspaces button {
+	color: rgba(251, 241, 199, 0.5);
+	padding: 0 8px;
+    transition: all 0.1s ease-in-out;
+}
+#workspaces button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+#workspaces button.active {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(250, 189, 47, 0.5);
+    transition: all 0.1s ease-in-out;
+}
+#workspaces button.active:hover {}
+#workspaces button.visible {}
+#workspaces button.empty {
+	color: rgba(255, 255, 255, 0.2);
+	padding-left: 20px;
+	background-color: rgba(215, 153, 33, 0.3);
+}
+
+#submap {
+	min-width: 50px;
+	font-size: 12px;
+	background-color: rgba(204, 36, 29, 0.5);
+	border-color: rgba(204, 36, 29, 1);
+}
+
+
+#cpu, #custom-gpu-usage, #memory, #disk {
+	background-color: rgba(69, 133, 136, 0.5);
+	border-color: rgba(69, 133, 136, 1);
+}
+
+
+#clock {
+	border-color: rgba(213, 93, 14, 1);
+	background-color: rgba(213, 93, 14, 0.5);
+}
+#network {
+	background-color: rgba(104, 157, 106, 0.5);
+	border-color: rgba(104, 157, 106, 1);
+}
+#network.disabled {
+	background-color: rgba(204, 36, 29, 0.5);
+}
+
+#custom-pipewire, #custom-brightness, #wireplumber {
+	background-color: rgba(178, 98, 134, 0.5);
+	border-color: rgba(178, 98, 134, 1);
+}
+
+#custom-updates {
+	background-color: transparent;
+}
+
+#group-power {
+	background-color: rgba(204, 36, 29, 0.5);
+	border-color: rgba(204, 36, 29, 1);
+}
+
+#keyboard-state * {
+	padding: 0 10px
+}
+
+/*==================================================**==================================================*/
+/*                                           color commented                                            */
+/*==================================================**==================================================*/
+/*==================================================*/
+/*                    gruvbox                       */
+/*==================================================*/
+/* rgba(40, 40, 40, 1)    dark-grey (#282828) */
+/* rgba(204, 36, 29, 1)   red (#cc241d) */
+/* rgba(152, 151, 26, 1)  yellow-green (#98971a) */
+/* rgba(215, 153, 33, 1)  gold (#d79921) */
+/* rgba(69, 133, 136, 1)  teal (#458588) */
+/* rgba(178, 98, 134, 1)  purple (#b16286) */
+/* rgba(104, 157, 106, 1) green (#689d6a) */
+/* rgba(168, 153, 132, 1) light-grey (#a89984) */
+/* rgba(146, 131, 116, 1) brown (#928374) */
+/* rgba(251, 73, 52, 1)   bright-red (#fb4934) */
+/* rgba(184, 187, 38, 1)  lime-green (#b8bb26) */
+/* rgba(250, 189, 47, 1)  bright-gold (#fabd2f) */
+/* rgba(131, 165, 152, 1) light-teal (#83a598) */
+/* rgba(211, 134, 155, 1) pink (#d3869b) */
+/* rgba(142, 192, 124, 1) light-green (#8ec07c) */
+/* rgba(235, 219, 178, 1) cream (#ebdbb2) */
+/* rgba(29, 32, 33, 1)    black (#1d2021) */
+/* rgba(60, 56, 54, 1)    grey (#3c3836) */
+/* rgba(80, 73, 69, 1)    brown-grey (#504945) */
+/* rgba(102, 92, 84, 1)   dark-brown (#665c54) */
+/* rgba(124, 111, 100, 1) light-brown (#7c6f64) */
+/* rgba(146, 131, 116, 1) another-grey (#928374) */
+/* rgba(213, 93, 14, 1)   orange (#d65d0e) */
+/* rgba(255, 255, 255, 1) white (#ffffff) */
+/* rgba(50, 48, 47, 1)    dark-grey-2 (#32302f) */
+/* rgba(189, 174, 147, 1) beige (#bdae93) */
+/* rgba(213, 196, 161, 1) light-beige (#d5c4a1) */
+/* rgba(251, 241, 199, 1) pale-yellow (#fbf1c7) */
+/* rgba(254, 128, 25, 1)  bright-orange (#fe8019) */

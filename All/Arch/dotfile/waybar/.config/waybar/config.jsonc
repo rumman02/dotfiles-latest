@@ -1,0 +1,257 @@
+// __          __ __     ______          _____  
+// \ \        / /\\ \   / /  _ \   /\   |  __ \ 
+//  \ \  /\  / /  \\ \_/ /| |_) | /  \  | |__) |
+//   \ \/  \/ / /\ \\   / |  _ < / /\ \ |  _  / 
+//    \  /\  / ____ \| |  | |_) / ____ \| | \ \ 
+//     \/  \/_/    \_\_|  |____/_/    \_\_|  \_\
+// https://github.com/Alexays/Waybar
+{
+	//==================================================// 
+	//                    general                       // 
+	//==================================================// 
+	//"name": "waybar1",
+	"layer": "top",
+	"position": "top",
+	"height": 26,
+	"reload_style_on_change": true,
+	"margin": "5, 0, 0, 0",
+	"fixed-center": true,
+	//==================================================// 
+	//                    modules                       // 
+	//==================================================// 
+	"modules-left": [
+		"group/group-power",
+		"hyprland/workspaces",
+		"workspaces",
+		//"wlr/taskbar",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"hyprland/submap",
+		"keyboard-state"
+	],
+	"modules-right": [
+		"custom/updates",
+		"cpu",
+		"custom/gpu-usage",
+		"memory",
+		"disk",
+		"network",
+		"battery",
+		"custom/pipewire",
+		"wireplumber",
+		"custom/brightness",
+		"clock"
+	],
+	//==================================================// 
+	//                 hyprland module                  // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#workspaces
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"format": "{name} {windows}",
+		"window-rewrite-default": " ",
+		"window-rewrite": {
+			"class<zen-alpha>": " ",
+			"kitty": " "
+		},
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
+		//"persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [], "6": [], "7": [], "8": [], "9": [] }
+	},
+	//==================================================// 
+	//                 hyprland submap                  // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#submap
+	"hyprland/submap": {
+		"on-click": "hyprctl dispatch submap reset"
+	},
+	//==================================================// 
+	//                 hyprland window                  // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#window
+	"hyprland/window": {
+		"format": "{title}",
+		// "max-length": 100,
+		"icon": true,
+		"icon-size": 15
+	},
+	//==================================================// 
+	//                   waybar clock                   // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Clock
+	"clock": {
+		"interval": 60,
+		"format": "  {:%a %d, %b    %I:%M %p}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions":  {
+			"on-click": "mode",
+			"on-click-middle": "shift_reset",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		},
+		"tooltip-format": "<tt><small>{calendar}</small></tt>"
+	},
+	//==================================================// 
+	//                  waybar memory                   // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Memory
+	"memory": {
+		"interval": 1,
+		"format": "  {percentage}%"
+	},
+	//==================================================// 
+	//                    waybar cpu                    // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-CPU
+	"cpu": {
+		"interval": 1,
+		"format": "  {usage}%"
+	},
+	//==================================================// 
+	//                   waybar disk                    // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Disk
+	"disk": {
+		"interval": 30,
+		"format": "󰋊 {specific_used:0.1f}G",
+		"unit": "GiB",
+		"tooltip-format": "Used {specific_used:0.1f}G  Total {specific_total:0.1f}G"
+	},
+	//==================================================// 
+	//              waybar pipewire sound               // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-WirePlumber
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": "󰖁 ",
+		"on-click": "helvum",
+		"format-icons": ["󰕿", "󰖀", "󰕾"],
+		"scroll-step": 1.0
+	},
+	//==================================================// 
+	//                  waybar network                  // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Network
+	"network": {
+		"interval": 1,
+		"format": "{icon}",
+		"format-ethernet": "󰈀",
+		"format-wifi": "  ",
+		"format-disconnected": "  ",
+		"tooltip-format-ethernet": "󰈀    {bandwidthUpBits}   {bandwidthDownBits}",
+		"tooltip-format-wifi": "   {bandwidthUpBits}  {bandwidthDownBits}",
+		"tooltip-format-disconnected": "  No internet "
+	},
+	//==================================================// 
+	//                   waybar taskbar                 // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Taskbar
+	"wlr/taskbar": {
+		"all-outputs": false,
+		"format": "{icon}",
+		//"sort-by-app-id": true,
+		//"active-first": true,
+		"on-click": "activate",
+		"on-click-middle": "close"
+	},
+	//==================================================// 
+	//                 custom brightness                // 
+	//==================================================// 
+	//ddcutil version
+	//"custom/brightness": {
+	//	// don't decrease this value of this inverval of brightness, it's may create error in background
+	//	"interval": 10,
+	//	"format": "󰃞 {percentage}%",
+	//	"format-icons": ["\uDB80\uDCDE", "\uDB80\uDCDF", "\uDB80\uDCE0"],
+	//	"return-type": "json",
+	//	"exec": "ddcutil --bus 5 getvcp 10 | grep -oP 'current.*?=\\s*\\K[0-9]+' | { read x; echo '{\"percentage\":'${x}'}'; }",
+	//	"on-scroll-up": "ddcutil --noverify --bus 5 setvcp 10 + 10",
+	//	"on-scroll-down": "ddcutil --noverify --bus 5 setvcp 10 - 10",
+	//	"on-click": "ddcutil --noverify --bus 5 setvcp 10 0",
+	//	"on-click-middle": "ddcutil --noverify --bus 5 setvcp 10 50",
+	//	"on-click-right": "ddcutil --noverify --bus 5 setvcp 10 100"
+	//},
+
+	// its just get value from that file and update, nothing with ddcutil
+	"custom/brightness": {
+		"interval":1,
+		"format": "󰃞 {}%",
+		"exec": "cat /tmp/brightness_value.txt",
+		"on-scroll-up": "~/.config/hypr/script/brightness_value_set.sh decrease",
+		"on-scroll-down": "~/.config/hypr/script/brightness_value_set.sh increase",
+		"tooltip-format": "󰃞  {}%"
+	},
+	//==================================================// 
+	//                  custom gpu usage                // 
+	//==================================================// 
+	"custom/gpu-usage": {
+		"format": "󰹑  {}",
+		"exec": "gpu-usage-waybar",
+		"return-type": "json",
+		"format-icons": "󰾲"
+	},
+	//==================================================// 
+	//                   custom update                  // 
+	//==================================================// 
+	"custom/updates": {
+		"format": "{} {icon}",
+		"return-type": "json",
+		"format-icons": {
+			"has-updates": "󰜷",
+			"updated": ""
+		},
+		"exec-if": "which waybar-module-pacman-updates",
+		"exec": "waybar-module-pacman-updates --no-zero-output"
+	},
+	//==================================================// 
+	//                    group-power                   // 
+	//==================================================// 
+	// https://github.com/Alexays/Waybar/wiki/Module:-Group
+	"group/group-power": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"custom/power", // First element is the "group leader" and won't ever be hidden
+			"custom/quit",
+			"custom/lock",
+			"custom/reboot"
+		]
+	},
+	"custom/quit": {
+		"format": "  ",
+		"tooltip-format": "Logout",
+		"on-click": "hyprctl dispatch exit"
+	},
+	"custom/lock": {
+		"format": "  ",
+		"tooltip-format": "Lock",
+		"on-click": "swaylock"
+	},
+	"custom/reboot": {
+		"format": " ",
+		"tooltip-format": "Reboot",
+		"on-click": "reboot"
+	},
+	"custom/power": {
+		"format": "⏼",
+		"tooltip-format": "Shutdown",
+		"on-click": "shutdown now"
+	}
+}

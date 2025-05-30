@@ -1,0 +1,73 @@
+local M = {}
+
+M.lazy = false
+
+M.priority = 1000
+
+M.cmd = {
+	"Colorscheme gruvbox",
+}
+
+M.opts = function()
+	local utils = require("lib.utils")
+	return {
+		contrast = "",
+		overrides = {
+			-- SignColumn = { bg = "none" },
+			-- FlashLabel = { fg = "#fabd2f" },
+			-- DiagnosticSignError = { fg = "#fb4934", bg = "none" },
+			-- DiagnosticSignHint = { fg = "#8ec07c", bg = "none" },
+			-- DiagnosticSignWarn = { fg = "#fabd2f", bg = "none" },
+			-- MiniIndentscopeSymbol = { fg = "#fe8019", bg = "none" },
+			-- WinSeparator = { fg = "#212121", bg = "none" },
+			-- -- NeoTreeNormal = { fg = "none", bg = "#212121" },
+			-- -- NeoTreeNormalNC = { fg = "none", bg = "#212121" },
+			-- NeoTreeNormal = { fg = "none", bg = "none" },
+			-- NeoTreeNormalNC = { fg = "none", bg = "none" },
+			-- TelescopeTitle = { fg = "#665c54", bg = "none" },
+			-- TelescopeResultsBorder = { fg = "#665c54", bg = "none" },
+			-- TelescopePreviewBorder = { fg = "#665c54", bg = "none" },
+			-- TelescopePromptBorder = { fg = "#665c54", bg = "none" },
+			-- WhichKeyBorder = { fg = "#665c54", bg = "none" },
+			-- WhichKeyNormal = { fg = "#665c54", bg = "none" },
+			-- TroubleNormal = { fg = "none", bg = "#212121" },
+			-- TroubleNormalNC = { fg = "none", bg = "#212121" },
+			-- TroubleCount = { fg = "#b8bb26", bg = "#212121" },
+			-- MarkSignNumHL = { fg = "#665c54", bg = "none" },
+			-- Folded = { fg = "#665c54", bg = "none" },
+			-- FoldColumn = { fg = "#665c54", bg = "none" },
+			-- CursorLineFold = { fg = "#665c54", bg = "none" },
+			-- RenderMarkdownH1Bg = { fg = "#000000", bg = "#b8bb26" },
+			-- RenderMarkdownH2Bg = { fg = "#252508", bg = "#94961e" },
+			-- RenderMarkdownH3Bg = { fg = "#4a4b0f", bg = "#6f7017" },
+			-- RenderMarkdownH4Bg = { fg = "#6f7017", bg = "#4a4b0f" },
+			-- RenderMarkdownH5Bg = { fg = "#94961e", bg = "#252508" },
+			-- RenderMarkdownH6Bg = { fg = "#b9bb26", bg = "#000000" },
+			-- NeoTreeFloatBorder = { fg = "none", bg = "#212121" },
+			-- NeoTreeFloatTitle = { fg = "none", bg = "#212121" },
+			-- NeoTreeFloatNormal = { bg = "#212121" },
+			-- SnacksNormal = { bg = "#212121" },
+			-- SnacksNormalNC = { bg = "#212121" },
+			-- InclineNormal = { fg = "#fbf1c7", bg = "#504945" },
+			-- CleverFChar = { bg = "#ff0000", fg = "#000000" },
+			Comment = { bg = "none", fg = "#504945" },
+			-- Visual = { bg = "#48413e", fg = "none" },
+			-- -- Comment = { bg = "none", fg = "#615b57" },
+			-- -- BlinkCmpMenu = { bg = "#212121", fg = "none" },
+			-- BlinkCmpMenu = { bg = "#282828", fg = "none" },
+			-- BlinkCmpMenuBorder = { bg = "#282828", fg = "none" },
+			-- BlinkCmpDoc = { bg = "#282828", fg = "none" },
+			-- BlinkCmpDocBorder = { bg = "#282828", fg = "none" },
+			-- BlinkCmpMenuSelection = { bg = "#3c3836", fg = "none" },
+		},
+		dim_inactive = false,
+		transparent_mode = utils.ui.transparent_mode,
+	}
+end
+
+M.config = function(_, opts)
+	require("gruvbox").setup(opts)
+	vim.cmd("colorscheme gruvbox")
+end
+
+return M

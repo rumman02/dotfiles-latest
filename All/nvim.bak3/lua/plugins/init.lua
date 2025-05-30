@@ -1,0 +1,16 @@
+return {
+	require("plugins.colorschemes"),
+	require("plugins.comments"),
+	require("plugins.explorers"),
+	require("plugins.git"),
+	require("plugins.highlights"),
+	require("plugins.keymaps"),
+	require("plugins.lines"),
+	require("plugins.mini"),
+	require("plugins.navigations"),
+	require("plugins.pairs"),
+	require("plugins.snacks"),
+	require("plugins.servers"),
+	require("plugins.finders"),
+	require("plugins.markdown"),
+}
