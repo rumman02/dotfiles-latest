@@ -36,7 +36,8 @@ window-vsync = true
 # ----------------------------------------------------------------------------- colorscheme
 # theme = GruvboxDark
 # theme = Dracula
-theme = tokyonight_night
+# theme = tokyonight_night
+theme = carbonfox
 window-theme = ghostty
 window-colorspace = "display-p3"
 
