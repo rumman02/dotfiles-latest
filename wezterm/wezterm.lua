@@ -21,10 +21,10 @@ return {
 	font = wezterm.font_with_fallback {
 		--[[ set font here, this is set as font rules | Iosevka, Iosevka Extended,
 		Iosevka Nerd Font, JetBrains Mono, JetBrainsMono Nerd Font, ZedMono Nerd Font ]]
-		{ family = "JetBrains Mono", weight = "Regular" },
-		{ family = "Symbols Nerd Font", scale = 0.9 },
+		{ family = "JetBrainsMono Nerd Font", weight = "Regular" },
+		{ family = "Symbols Nerd Font Mono", scale = 0.9 },
 	},
-	font_size = 10,
+	font_size = 10.5,
 	bold_brightens_ansi_colors = "BrightAndBold", -- true, No, BrightAndBold, BrightOnly
 	--==================================================-- 
 	--                    adjustment                    -- 
@@ -83,5 +83,31 @@ return {
 	--                       keys                       -- 
 	--==================================================-- 
 	disable_default_key_bindings = true,
+
+	--==================================================-- 
+	--                 plugin settings                  -- 
+	--==================================================-- 
+    wezterm.on('user-var-changed', function(window, pane, name, value)
+        local overrides = window:get_config_overrides() or {}
+        if name == "ZEN_MODE" then
+            local incremental = value:find("+")
+            local number_value = tonumber(value)
+            if incremental ~= nil then
+                while (number_value > 0) do
+                    window:perform_action(wezterm.action.IncreaseFontSize, pane)
+                    number_value = number_value - 1
+                end
+                overrides.enable_tab_bar = false
+            elseif number_value < 0 then
+                window:perform_action(wezterm.action.ResetFontSize, pane)
+                overrides.font_size = nil
+                overrides.enable_tab_bar = true
+            else
+                overrides.font_size = number_value
+                overrides.enable_tab_bar = false
+            end
+        end
+        window:set_config_overrides(overrides)
+    end)
 }
 
